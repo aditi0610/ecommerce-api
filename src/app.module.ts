@@ -7,6 +7,7 @@ import { ProductsModule } from './products/products.module';
 import { CategoriesModule } from './categories/categories.module';
 import { OrdersModule } from './orders/orders.module';
 import { CartModule } from './cart/cart.module';
+import { PaymentsModule } from './payments/payments.module';
 import * as dotenv from 'dotenv'
 dotenv.config();
 
@@ -28,6 +29,7 @@ dotenv.config();
     CategoriesModule,
     OrdersModule,
     CartModule,
+    PaymentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
