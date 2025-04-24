@@ -11,6 +11,7 @@ import * as dotenv from 'dotenv'
 import { User } from './users/entities/user.entity';
 import { Cart } from './cart/entities/cart.entity';
 import { Order } from './orders/entities/order.entity';
+import { Payment } from './payments/entities/payment.entity';
 dotenv.config();
 
 
@@ -23,7 +24,7 @@ dotenv.config();
       username: 'root',
       password: process.env.DATABASE_PASS,
       database: process.env.DATABASE_NAME, // fixed quote
-      entities: [User, Cart, Order],
+      entities: [User, Cart, Order, Payment],
       synchronize: true,
     }),
     UsersModule,
