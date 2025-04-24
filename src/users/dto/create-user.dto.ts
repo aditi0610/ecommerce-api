@@ -3,7 +3,8 @@ import { IsEmail, IsNotEmpty, MinLength } from 'class-validator';
 
 export class CreateUserDto {
   @ApiProperty() 
-
+  id: number;
+  
   @ApiProperty()
   @IsNotEmpty()
   name: string;
