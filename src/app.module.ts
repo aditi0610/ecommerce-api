@@ -15,6 +15,7 @@ import { Payment } from './payments/entities/payment.entity';
 import { Category } from './categories/entities/category.entity';
 import { Review } from './reviews/entities/review.entity';
 import { Product } from './products/entities/product.entity';
+import { AuthModule } from './auth/auth.module';
 dotenv.config();
 
 
@@ -37,6 +38,7 @@ dotenv.config();
     CartModule,
     PaymentsModule,
     ReviewsModule,
+    AuthModule,
   ],
 
 })
