@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
+import { ProductsModule } from './products/products.module';
 import * as dotenv from 'dotenv'
 dotenv.config();
 
@@ -20,6 +21,7 @@ dotenv.config();
       synchronize: true,
     }),
     UsersModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
