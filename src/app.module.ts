@@ -6,6 +6,7 @@ import { UsersModule } from './users/users.module';
 import { ProductsModule } from './products/products.module';
 import { CategoriesModule } from './categories/categories.module';
 import { OrdersModule } from './orders/orders.module';
+import { CartModule } from './cart/cart.module';
 import * as dotenv from 'dotenv'
 dotenv.config();
 
@@ -26,6 +27,7 @@ dotenv.config();
     ProductsModule,
     CategoriesModule,
     OrdersModule,
+    CartModule,
   ],
   controllers: [AppController],
   providers: [AppService],
