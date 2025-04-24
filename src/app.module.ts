@@ -2,6 +2,9 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import * as dotenv from 'dotenv'
+dotenv.config();
+
 
 @Module({
   imports: [
@@ -10,7 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'Tsparihar',
+      password: process.env.DATABASE_PASS,
       database: process.env.DATABASE_NAME, // fixed quote
       entities: [],
       synchronize: true,
