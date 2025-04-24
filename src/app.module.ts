@@ -9,6 +9,7 @@ import { PaymentsModule } from './payments/payments.module';
 import { ReviewsModule } from './reviews/reviews.module';
 import * as dotenv from 'dotenv'
 import { User } from './users/entities/user.entity';
+import { Cart } from './cart/entities/cart.entity';
 dotenv.config();
 
 
@@ -21,7 +22,7 @@ dotenv.config();
       username: 'root',
       password: process.env.DATABASE_PASS,
       database: process.env.DATABASE_NAME, // fixed quote
-      entities: [User],
+      entities: [User,Cart],
       synchronize: true,
     }),
     UsersModule,
