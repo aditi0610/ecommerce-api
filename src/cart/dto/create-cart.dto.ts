@@ -9,6 +9,11 @@ export class CreateCartDto {
     @IsNumber()
     productId: number;
     
+
+    @ApiProperty()
+    @IsNumber()
+    userId: number;
+
     @ApiProperty()
     @IsInt()
     @Min(1)
