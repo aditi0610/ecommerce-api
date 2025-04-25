@@ -10,13 +10,16 @@ export class CreateProductDto {
   @IsString()
   name: string;
 
+  @ApiProperty()
   @IsNotEmpty()
   description: string;
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   price: number;
 
+  @ApiProperty()
   @IsNotEmpty()
   stock: number;
 
