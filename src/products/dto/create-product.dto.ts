@@ -23,5 +23,10 @@ export class CreateProductDto {
   @IsNotEmpty()
   stock: number;
 
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsNumber()
+  categoryId: number;
+
  
 }
