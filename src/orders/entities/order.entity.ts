@@ -1,5 +1,6 @@
+import { Payment } from "src/payments/entities/payment.entity";
 import { User } from "src/users/entities/user.entity";
-import { Column, Entity, Generated, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, Generated, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name: 'order'})
 export class Order {
@@ -7,12 +8,18 @@ export class Order {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @ManyToOne(() => User, (user) => user.orders)
+    user: User;
+    
+    @OneToOne(() => Payment, { cascade: true })
+    @JoinColumn()
+    payment: Payment;
+
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     orderDate: Date;
 
     @Column()
     status: string;    
 
-    @ManyToOne(() => User, (user) => user.orders)
-    user: User;
+   
 }
