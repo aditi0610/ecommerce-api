@@ -7,17 +7,17 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post()
+  @Post('create-or-update')
   create(@Body() dto: CreateUserDto) {
     return this.usersService.create(dto);
   }
 
-  @Get()
+  @Get('getAll')
   findAll() {
     return this.usersService.findAll();
   }
 
-  @Get(':id')
+  @Get('getBy/:id')
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(+id);
   }
@@ -27,7 +27,7 @@ export class UsersController {
     return this.usersService.update(+id, dto);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   remove(@Param('id') id: string) {
     return this.usersService.remove(+id);
   }

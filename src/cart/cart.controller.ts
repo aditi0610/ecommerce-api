@@ -7,17 +7,17 @@ import { UpdateCartDto } from './dto/update-cart.dto';
 export class CartController {
   constructor(private readonly cartService: CartService) {}
 
-  @Post()
+  @Post('create-or-update')
   create(@Body() createCartDto: CreateCartDto) {
     return this.cartService.create(createCartDto);
   }
 
-  @Get()
+  @Get('getAll')
   findAll() {
     return this.cartService.findAll();
   }
 
-  @Get(':id')
+  @Get('getBy/:id')
   findOne(@Param('id') id: string) {
     return this.cartService.findOne(+id);
   }
@@ -27,7 +27,7 @@ export class CartController {
     return this.cartService.update(+id, updateCartDto);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   remove(@Param('id') id: string) {
     return this.cartService.remove(+id);
   }

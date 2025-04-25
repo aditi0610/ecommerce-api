@@ -7,17 +7,17 @@ import { UpdateCategoryDto } from './dto/update-category.dto';
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
-  @Post()
+  @Post('create-or-update')
   create(@Body() createCategoryDto: CreateCategoryDto) {
     return this.categoriesService.create(createCategoryDto);
   }
 
-  @Get()
+  @Get('getAll')
   findAll() {
     return this.categoriesService.findAll();
   }
 
-  @Get(':id')
+  @Get('getBy/:id')
   findOne(@Param('id') id: string) {
     return this.categoriesService.findOne(+id);
   }
@@ -27,7 +27,7 @@ export class CategoriesController {
     return this.categoriesService.update(+id, updateCategoryDto);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   remove(@Param('id') id: string) {
     return this.categoriesService.remove(+id);
   }

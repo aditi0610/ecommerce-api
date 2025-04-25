@@ -7,17 +7,17 @@ import { UpdatePaymentDto } from './dto/update-payment.dto';
 export class PaymentsController {
   constructor(private readonly paymentsService: PaymentsService) {}
 
-  @Post()
+  @Post('create-or-update')
   create(@Body() createPaymentDto: CreatePaymentDto) {
     return this.paymentsService.create(createPaymentDto);
   }
 
-  @Get()
+  @Get('getAll')
   findAll() {
     return this.paymentsService.findAll();
   }
 
-  @Get(':id')
+  @Get('getBy/:id')
   findOne(@Param('id') id: string) {
     return this.paymentsService.findOne(+id);
   }
@@ -27,7 +27,7 @@ export class PaymentsController {
     return this.paymentsService.update(+id, updatePaymentDto);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   remove(@Param('id') id: string) {
     return this.paymentsService.remove(+id);
   }
