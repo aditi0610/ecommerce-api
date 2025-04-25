@@ -1,3 +1,4 @@
+import { Cart } from "src/cart/entities/cart.entity";
 import { Order } from "src/orders/entities/order.entity";
 import { Review } from "src/reviews/entities/review.entity";
 import { Column, Entity, Generated, OneToMany, PrimaryGeneratedColumn } from "typeorm";
@@ -25,4 +26,9 @@ export class User {
 
     @OneToMany(() => Review, (review) => review.user)
     reviews: Review[];
+
+   // A user can have many cart items
+   @OneToMany(() => Cart, (cart) => cart.user)
+   cart: Cart[];
+   
 }
