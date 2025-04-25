@@ -30,11 +30,11 @@ export class ProductsService {
     return this.productRepo.findOne({ where: { id }, relations: ['category'] });
   }
 
-  update(id: number, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
+  update(id: number, dto: UpdateProductDto) {
+    return this.productRepo.update(id, dto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} product`;
+    return this.productRepo.delete(id);
   }
 }
