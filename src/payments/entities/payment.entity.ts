@@ -1,4 +1,5 @@
-import { Column, Entity, Generated, PrimaryGeneratedColumn } from "typeorm";
+import { Order } from "src/orders/entities/order.entity";
+import { Column, Entity, Generated, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name: 'payment'})
 export class Payment {
@@ -11,4 +12,7 @@ export class Payment {
 
     @Column()
     status: string;  
+
+    @OneToOne(() => Order, order => order.payment)
+    order: Order;
 }
