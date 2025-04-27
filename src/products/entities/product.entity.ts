@@ -12,7 +12,7 @@ export class Product {
     @Column()
     name: string;
 
-    @Column()
+    @Column('text')
     description: string;
 
     @Column()
