@@ -17,11 +17,11 @@ export class CategoriesService {
   }
 
   findAll() {
-    return this.categoryRepo.find();
+    return this.categoryRepo.find({ relations: ['products'] });
   }
 
   findOne(id: number) {
-    return this.categoryRepo.findOne({ where: { id } });
+    return this.categoryRepo.findOne({ where: { id }, relations: ['products'] });
   }
 
   update(id: number, dto: UpdateCategoryDto) {
